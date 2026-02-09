@@ -20,6 +20,7 @@ jobs:
 
       - name: Build and Tar with Buildx CLI
         run: |
+          cd streamable_http_example
           docker buildx build \
             --platform linux/arm64 \
             --tag loki-mcp:latest \
@@ -30,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: arm-tarball
-          path: loki-mcp.tar
+          path: streamable_http_example/loki-mcp.tar
